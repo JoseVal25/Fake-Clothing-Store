@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProducts } from "../features/products/productsSlice";
+import { getAllProducts } from "../features/products/productsSlice";
 
 const Cards = () => {
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
+  const products = useSelector(selectProducts);
 
   useEffect(() => {
-    getAllProdutcs();
+    dispatch(getAllProducts());
   }, []);
 
-  const getAllProdutcs = async () => {
-    const products = await axios("http://localhost:3001/items");
-    if (products.data) {
-      setProducts(products.data);
-    }
-    return products.data;
-  };
   return (
     <div className="cardsDiv">
       {products.length &&

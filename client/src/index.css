@@ -15,6 +15,7 @@
   --footer-bg-color: #0f172a;
   --footer-text-color: #99f6e4;
   --price-color: #b91c1c;
+  --price-color2: #ef4444;
   --add-button-color1: #fde047; 
   --add-button-color2: #facc15;
 }
@@ -30,6 +31,11 @@ body {
   font-family: bodyFont;
 }
 
+.clearfix {
+  float: none;
+  clear: both;
+}
+
 .link {
   text-decoration: none;
   color: var(--background-color);
@@ -38,11 +44,11 @@ body {
 .headerLink {
   text-decoration: none;
   color: var(--text-color);
+  width: 40%;
 }
 
-.header,
-.headerLink {
-  width: 100%;
+.header {
+  width: 10%;
   height: 100px;
   margin: 0px auto;
   text-align: center;
@@ -163,6 +169,126 @@ body {
   cursor: pointer;
   opacity: 0.6;
   transition: all 300ms ease-in-out;
+}
+.checkout-component {
+  width: 80%;
+  display: flex;
+  margin: 0px auto;
+  align-items: flex-start;
+}
+
+.basketContainer {
+  width: 100%;
+  margin: 8px auto;
+  text-align: left;
+  color: var(--text-alternative-color);
+}
+
+.checkout-product {
+  width: 90%;
+  height: 320px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+.checkout-product .first {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.checkout-product img {
+  width: 60%;
+  height: 70%;
+}
+
+.checkout-product .middle {
+  width: 40%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: -40px;
+  margin-right: 20px;
+}
+
+.checkout-product .middle p {
+  color: var(--price-color);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.checkout-product .last {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+  height: 90%;
+}
+
+.checkout-product .last input[type="number"] {
+  width: 35%;
+  padding: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.checkout-product .last button {
+  padding: 6px;
+  border: none;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--price-color2) 50%, var(--price-color) 100%);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.checkout-product .last button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.checkout-product h2,
+.checkout-product p,
+.checkout-product label,
+.checkout-product input[type="number"],
+.checkout-product button {
+  display: block;
+}
+
+.sidebar {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 50px;
+}
+
+.sidebar p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sidebar .total {
+  color: var(--price-color);
+  margin: 4px 0px;
+}
+
+.sidebar button {
+  margin-top: 4px;
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--add-button-color1) 50%, var(--add-button-color2) 100%);
+}
+
+.sidebar button:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
 
 footer {
